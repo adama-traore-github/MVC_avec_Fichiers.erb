@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gossips</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    li strong {
+      color: #4CAF50;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Liste des potins</h1>
+  <ul>
+    <% @gossips.each do |gossip| %>
+      <li><strong><%= gossip.author %>:</strong> <%= gossip.content %></li>
+    <% end %>
+  </ul>
+  <a href="/gossips/new">Ajouter un nouveau potin</a>
+</body>
+</html>
